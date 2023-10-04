@@ -7,8 +7,8 @@ import csv
 
 def access_instagram(driver: webdriver.Chrome):
     time.sleep(5)
-    driver.find_element(By.CSS_SELECTOR , "form div div:nth-child(1) label input").send_keys("igor_cardoso_santos12")
-    driver.find_element(By.CSS_SELECTOR , "form div div:nth-child(2) label input").send_keys("Aa1233212")
+    driver.find_element(By.CSS_SELECTOR , "form div div:nth-child(1) label input").send_keys("igorzera444")
+    driver.find_element(By.CSS_SELECTOR , "form div div:nth-child(2) label input").send_keys("@Aa1233212")
     driver.find_element(By.CSS_SELECTOR , "form div div:nth-child(3) button").click()
     time.sleep(5)
 
@@ -24,12 +24,12 @@ driver.get("https://www.instagram.com/")
 access_instagram(driver)
 time.sleep(2)
 
-driver.get("https://www.instagram.com/igor_cardoso_santos12")
+driver.get("https://www.instagram.com/igor_cardoso_001/")
 time.sleep(5)
 
 driver.find_element(By.CSS_SELECTOR, "header section ul li:nth-child(3)").click()
 
-profiles = open("/home/igorpetersson/repos/projects/instagram-app/profiles_igor_cardoso_santos12.txt", "a", newline='', encoding='utf-8')
+profiles = open("/home/igorpetersson/repos/projects/instagram-app/profiles_igor_cardoso_001.txt", "a", newline='', encoding='utf-8')
 file = csv.writer(profiles, delimiter=" ")
 
 time.sleep(5)

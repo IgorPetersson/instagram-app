@@ -31,7 +31,7 @@ def mark_people(driver: webdriver.Chrome, text: str):
     driver.find_element(By.CSS_SELECTOR, "form textarea").send_keys("ig")
     driver.find_element(By.CSS_SELECTOR, "form textarea").send_keys(Keys.CONTROL + "a")
     driver.find_element(By.CSS_SELECTOR, "form textarea").send_keys(Keys.DELETE)
-    time.sleep(80)
+    time.sleep(200)
 
 def separate_profiles(profiles: list[str], number_of_persons: int) -> list[str]:
     start = 1
@@ -62,12 +62,14 @@ def follow_person(driver: webdriver.Chrome):
 profiles = [
     {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igor_cardoso_santos12.txt", "id":0, "username": "igor_cardoso_santos12","password": "Aa1233212"},
     {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igorpetersson.txt","id": 1,"username": "igorpetersson", "password": "Aa1233212"},
-    {"url": "/home/igor/instagram-app/profiles/profiles_igor_santos2407.txt","id": 2,"username": "igor_santos2407", "password": "a1233212"},
-    {"url": "/home/igor/instagram-app/profiles/profiles_hyago.txt", "id":3,"username": "hyago.nascimento@sou.ufmt.br", "password": "Jesusmeutudo1@"},
-    {"url": "/home/igor/instagram-app/profiles/profiles_hyago.txt", "id":4,"username": "ovadushi", "password": "v81341819v"}
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igor_santos2407.txt","id": 2,"username": "igor_santos2407", "password": "a1233212"},
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_jusouzapl_.txt","id": 3,"username": "jusouzapl_", "password": "igoreju"},
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igorzera444.txt", "id":4,"username": "igorzera444", "password": "@Aa1233212"},
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igorpet.txt", "id":5,"username": "igor.pet_", "password": "@Aa1233212"},
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igor_cardoso_001.txt", "id":6,"username": "igor_cardoso_001", "password": "@Aa1233212"}
 ] 
 
-profile = profiles.__getitem__(1)
+profile = profiles.__getitem__(2)
 
 driver = webdriver.Chrome()
 driver.get("https://www.instagram.com/")
@@ -75,7 +77,7 @@ driver.get("https://www.instagram.com/")
 access_instagram(driver, profile)
 time.sleep(6)
 
-driver.get("https://www.instagram.com/p/CwfvO-cO-Lr/")
+driver.get("https://www.instagram.com/p/CxrA-oevrzz/")
 
 profiles_csv =  open(profile["url"])
 profiles_reader = csv.reader(profiles_csv)
@@ -83,7 +85,7 @@ profiles = [x[0] for x in profiles_reader]
 
 new_profiles = separate_profiles(profiles, 2)
 
-cont = 1
+cont = 0
 for profile in new_profiles:
     text = " ".join(profile)  
     mark_people(driver, text)

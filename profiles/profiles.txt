@@ -279,7 +279,6 @@
 @andrers23
 @sep.mauricio
 @elielson_bruno
-@pedro.oliv01
 @hiagodornelles
 @pedro_hodrigues
 @brendacardoso.s
