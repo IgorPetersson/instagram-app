@@ -24,12 +24,12 @@ driver.get("https://www.instagram.com/")
 access_instagram(driver)
 time.sleep(2)
 
-driver.get("https://www.instagram.com/igor_cardoso_001/")
+driver.get("https://www.instagram.com/delmaferreira0510/")
 time.sleep(5)
 
 driver.find_element(By.CSS_SELECTOR, "header section ul li:nth-child(3)").click()
 
-profiles = open("/home/igorpetersson/repos/projects/instagram-app/profiles_igor_cardoso_001.txt", "a", newline='', encoding='utf-8')
+profiles = open("/home/igorpetersson/repos/projects/instagram-app/profiles_delmaferreira0510.txt", "a", newline='', encoding='utf-8')
 file = csv.writer(profiles, delimiter=" ")
 
 time.sleep(5)

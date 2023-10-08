@@ -66,10 +66,11 @@ profiles = [
     {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_jusouzapl_.txt","id": 3,"username": "jusouzapl_", "password": "igoreju"},
     {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igorzera444.txt", "id":4,"username": "igorzera444", "password": "@Aa1233212"},
     {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igorpet.txt", "id":5,"username": "igor.pet_", "password": "@Aa1233212"},
-    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igor_cardoso_001.txt", "id":6,"username": "igor_cardoso_001", "password": "@Aa1233212"}
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_igor_cardoso_001.txt", "id":6,"username": "igor_cardoso_001", "password": "@Aa1233212"},
+    {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_delmaferreira0510.txt", "id":7,"username": "delmaferreira0510", "password": "rrq25l19"}
 ] 
 
-profile = profiles.__getitem__(2)
+profile = profiles.__getitem__(7)
 
 driver = webdriver.Chrome()
 driver.get("https://www.instagram.com/")
@@ -77,7 +78,7 @@ driver.get("https://www.instagram.com/")
 access_instagram(driver, profile)
 time.sleep(6)
 
-driver.get("https://www.instagram.com/p/CxrA-oevrzz/")
+driver.get("https://www.instagram.com/p/Cx5p-cju0xg/")
 
 profiles_csv =  open(profile["url"])
 profiles_reader = csv.reader(profiles_csv)
