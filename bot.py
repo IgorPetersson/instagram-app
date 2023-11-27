@@ -31,7 +31,7 @@ def mark_people(driver: webdriver.Chrome, text: str):
     driver.find_element(By.CSS_SELECTOR, "form textarea").send_keys("ig")
     driver.find_element(By.CSS_SELECTOR, "form textarea").send_keys(Keys.CONTROL + "a")
     driver.find_element(By.CSS_SELECTOR, "form textarea").send_keys(Keys.DELETE)
-    time.sleep(200)
+    time.sleep(330)
 
 def separate_profiles(profiles: list[str], number_of_persons: int) -> list[str]:
     start = 1
@@ -70,7 +70,7 @@ profiles = [
     {"url": "/home/igorpetersson/repos/projects/instagram-app/profiles/profiles_delmaferreira0510.txt", "id":7,"username": "delmaferreira0510", "password": "rrq25l19"}
 ] 
 
-profile = profiles.__getitem__(7)
+profile = profiles.__getitem__(3)
 
 driver = webdriver.Chrome()
 driver.get("https://www.instagram.com/")
@@ -78,13 +78,13 @@ driver.get("https://www.instagram.com/")
 access_instagram(driver, profile)
 time.sleep(6)
 
-driver.get("https://www.instagram.com/p/Cx5p-cju0xg/")
+driver.get("https://www.instagram.com/p/Cxvp1VBOjxi/")
 
 profiles_csv =  open(profile["url"])
 profiles_reader = csv.reader(profiles_csv)
 profiles = [x[0] for x in profiles_reader]
 
-new_profiles = separate_profiles(profiles, 2)
+new_profiles = separate_profiles(profiles, 3)
 
 cont = 0
 for profile in new_profiles:

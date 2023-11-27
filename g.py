@@ -1,30 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Dados de exemplo
-x = np.array([9.156, 14.722, 24.955, 33.573, 46.858, 54.399, 63.016])
-y = np.array([1.387, 1.151, 0.688, 0.349, -0.341, -0.655, -1.177])
+data_v = np.array([5.8252, 5.7525, 5.4247, 4.9926, 4.5448, 4.4082, 3.8276, 3.5885, 3.0945, 2.6283, 2.3952, 1.9865, 1.6909, 1.3499, 0.9064, 0.6790, 0.5500, 0.4211, 0.2154, 0.1371])
+data_ms = np.array([0.0295, 0.0422, 0.1013, 0.1858, 0.2787, 0.3125, 0.4560, 0.5152, 0.6841, 0.8530, 0.9375, 1.0980, 1.3176, 1.5709, 1.9003, 2.0693, 2.3480, 2.6351, 3.1334, 3.6571])
 
-# Realize um ajuste linear usando a função polyfit do NumPy
-coefficients = np.polyfit(x, y, 1)
-slope, intercept = coefficients
+plt.figure(figsize=(10, 5))
 
-# Crie uma linha de tendência com os coeficientes obtidos
-line_of_best_fit = slope * x + intercept
-
-# Imprima a função da reta
-print(f"A função da reta é: y = {slope}x + {intercept}")
-
-# Crie um gráfico de dispersão
-plt.scatter(x, y, label='Dados de exemplo')
-
-# Plote a linha de tendência
-plt.plot(x, line_of_best_fit, label='Linha de tendência', color='red')
-
-# Adicione rótulos e uma legenda
-plt.xlabel('Tempo em microsegundos')
-plt.ylabel('Ln(V/Volt)')
+plt.plot(data_ms, data_v, 'bo-', label='V por ms')
+plt.title('Valores de Vr pelo tempo(ms)')
+plt.xlabel('Tempo (ms)')
+plt.ylabel('Tensão (V)')
+plt.grid(True)
 plt.legend()
 
-# Mostre o gráfico
 plt.show()
+
+

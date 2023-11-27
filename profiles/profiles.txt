@@ -302,7 +302,6 @@
 @felipetorquato_campos
 @rogeziik
 @rafa_jecolvara
-@jonathan04alencar
 @israelschussmuller
 @cba_dann
 @bruninhovg.fds
